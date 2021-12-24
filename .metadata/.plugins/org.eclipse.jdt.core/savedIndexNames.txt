@@ -1,0 +1,10 @@
+INDEX VERSION 1.131+C:\Users\PersonalWork\eclipse-workspace\ITSE 2317 - Java Programming(intermediate)\.metadata\.plugins\org.eclipse.jdt.core
+1473160202.index
+3252066891.index
+559670790.index
+1443120067.index
+3361789536.index
+3087672047.index
+3067194077.index
+3211257590.index
+553874261.index

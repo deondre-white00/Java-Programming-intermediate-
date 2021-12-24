@@ -1,0 +1,42 @@
+package program5;
+
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.List;
+
+public class Cash_Register {
+	
+	TestProgram5 prog;
+	List<Retail_Item> tested;
+	
+	List<String> cashreg = new ArrayList<>();
+	
+	
+	public void display_menu(List<Retail_Item> tested) {
+		
+		
+		for (Retail_Item regist : tested) 
+	      {
+	         System.out.println(regist); // invokes toString
+	         
+	      }
+	}
+	
+	public void purchase_item(String item) {
+		
+		cashreg.add(item);
+		System.out.println(cashreg);
+	}
+
+	public void get_total() {
+		
+	}
+	
+	public void show_items() {
+		
+	}
+	
+	public void clear() {
+		
+	}
+}

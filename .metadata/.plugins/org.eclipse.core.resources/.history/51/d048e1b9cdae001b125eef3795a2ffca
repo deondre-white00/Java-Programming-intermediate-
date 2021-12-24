@@ -1,0 +1,52 @@
+package program5;
+
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.List;
+import java.util.Scanner;
+
+public class Cash_Register {
+	
+	TestProgram5 prog;
+	Retail_Item test = new Retail_Item();
+	List<Retail_Item> tested;
+	
+	List<Retail_Item> cashreg = new ArrayList<>();
+	
+	Scanner in = new Scanner(System.in);
+	
+	
+	public void display_menu(List<Retail_Item> tested) {
+		
+		
+		for (Retail_Item regist : tested) 
+	      {
+			
+	         System.out.println(regist); // invokes toString
+	         
+	      }
+	}
+	
+	public void purchase_item(Retail_Item test) {
+		
+		System.out.println("Enter item number: ");
+		Integer item = in.nextInt();
+		Integer item2 = test.setItemNumber();
+		test.getItemNumber();
+		//cashreg.add(tested);
+		System.out.println(tested);
+		
+	}
+
+	public void get_total() {
+		
+	}
+	
+	public void show_items() {
+		
+	}
+	
+	public void clear() {
+		
+	}
+}

@@ -1,0 +1,44 @@
+/*	public void validateDate()
+	{
+		if(!valMonth(month))
+		{
+			throw new IllegalArgumentException("Month must be with in 1-12");
+		}
+		
+		if(!valDay(day))
+		{
+			throw new IllegalArgumentException("Day must be with in 1-12");
+		}
+		
+		if(!valYear(year))
+		{
+			throw new IllegalArgumentException("Year must be with in 1-12");
+		}
+		
+		
+	}*/
+
+
+
+
+public void validateDate()
+	{		
+		valueMonth = new BigDecimal(month);
+		valueDay = new BigDecimal(day);
+		if(valueMonth.intValue() < 1 || valueMonth.intValue() > 12)
+		{
+			System.err.println("Month range must be within 1-12");
+		}
+		
+		if(valueDay.intValue() < 1 || valueDay.intValue() > 31)
+		{
+			System.err.println("Day must be with in 1-31");
+		}
+		
+		if(!valYear(year))
+		{
+			System.err.println("Year must be 4 digits");
+		}
+		
+		
+	}

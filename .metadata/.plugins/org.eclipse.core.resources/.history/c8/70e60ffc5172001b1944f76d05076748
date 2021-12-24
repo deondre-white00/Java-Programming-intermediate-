@@ -1,0 +1,14 @@
+package Program2;
+
+public abstract class Shape {
+	
+	private final double area;
+	private final double volume;
+	
+	public Shape (double area, double volume) {
+		
+		this.area = area;
+		this.volume = volume;
+	}
+
+}

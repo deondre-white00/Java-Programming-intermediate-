@@ -1,0 +1,114 @@
+package Program9;
+
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStreamReader;
+import java.util.Stack;
+
+public class InfixToPostfixConverter {
+	
+	
+	public static void main(String[] args)
+	{
+
+		InfixToPostfixConverter itpf = new InfixToPostfixConverter();
+		
+		itpf.convertToPostfix("a+b*(c^d-e)^(f+g*h)-i");
+		itpf.postFix();
+		
+	}
+	 
+	 
+	 
+
+	int t = 0;
+	char c;
+	String result = new String();
+	String exp;
+	Stack<Character> list = new Stack<Character>();
+	
+
+	public String convertToPostfix(String exp){
+		
+		for(int i = 0; i < exp.length() - 1; i++) {
+			
+			c = exp.charAt(i);
+		
+			
+			if(isOperator(c)) {
+				result += c;
+			}
+			else if (c == '('){
+				list.push(c);
+			}
+			else if (c == ')'){
+				while(!list.isEmpty() || list.peek() != '(')
+					result += list.pop();
+					list.pop();
+			}
+			else {
+				while(!list.isEmpty() || precedence(c) <= precedence(list.peek())) {
+					result += list.pop();
+				}
+				list.push(c);
+				
+				}
+			}
+		
+		while(!list.isEmpty()) {
+			if(list.peek() == '(')
+				return "Invaild Exp";
+			result += list.pop();
+		}
+		return result;
+	}
+	
+	public boolean isOperator(char c) {
+		
+		if(c >= '0' && c <= '9') return true;
+		if(c >= 'a' && c <= 'z') return true;
+		if(c >= 'A' && c <= 'Z') return true;
+		return false;
+		
+	}
+	
+	public int precedence(char c) {
+		
+		
+		switch(c) {
+		case '+': t = 1;
+		break;
+		case '-': t = 2;
+		break;
+		case '*': t = 3;
+		break;
+		case '/': t = 4;
+		break;
+		case '^': t = 5;
+		break;
+		case '%': t = 6;
+		break;
+		default:
+			t = 0;
+		}
+		
+		return t;
+	}
+	
+	
+	
+	public void postFix() {
+		System.out.println(result);
+	}
+	
+	
+	
+	
+	
+	
+	
+		
+		
+	
+
+}

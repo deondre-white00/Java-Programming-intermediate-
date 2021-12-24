@@ -1,0 +1,106 @@
+package program5;
+
+import java.io.IOException;
+
+import java.nio.file.Path;
+import java.nio.file.Paths;
+import java.util.ArrayList;
+import java.util.Collection;
+import java.util.List;
+import java.util.NoSuchElementException;
+import java.util.Scanner;
+
+import Program1.Employee;
+
+public class TestProgram5 {
+	
+	Scanner input = new Scanner(System.in);
+	String filename;
+	int number;
+	String describe;
+	int invent;
+	double prices;
+	
+
+	public static void main(String[] args) {
+		TestProgram5 test = new TestProgram5();
+		test.openFile();
+		test.readRecords();
+		test.toString();
+		
+		
+
+	}
+	
+	
+	
+	List<Retail_Item> list = new ArrayList<>();
+	//Retail_Item retail = new Retail_Item();
+	
+	
+	 public void openFile()
+	   {
+		 		 		 
+		try {
+			//System.out.println("Enter the name of the file you'd like to read: ");
+			//filename = input.next();
+			input = new Scanner(Paths.get("Inventory.txt"  ));
+		} catch (IOException ioException) {
+			System.err.println("Error opening file. Terminating.");
+			System.exit(1);
+		}
+		 
+	   }
+	 
+	 public void readRecords()
+	   {
+		 
+		
+		
+
+	      try 
+	      {
+	    	  
+			while (input.hasNext()) // while there is more to read
+			{
+				int number = input.nextInt();
+				String describe = input.next();
+				int invent = input.nextInt();
+				double prices = input.nextDouble();
+				
+				list.add(new Retail_Item(number, describe, invent, prices));
+				//System.out.println(list);
+				
+				 for (Retail_Item currentEmployee : list) 
+			      {
+			         System.out.println(currentEmployee); // invokes toString
+			         
+			      } // end for
+			  }			 
+	      } 
+	      catch (NoSuchElementException elementException)
+	      {
+	         System.err.println("File improperly formed. Terminating.");
+	      } 
+	      catch (IllegalStateException stateException)
+	      {
+	         System.err.println("Error reading from file. Terminating.");
+	      } 
+	      
+	     // System.out.println(list);
+			//input.close();
+	      
+	   }
+	 
+	 @Override
+	 public String toString()
+	 {
+	    return String.format(
+	       "Item #: %-2d  Description: %-15s  Inventory: %-4d  Price: $%,6.2f", 
+	       number, describe, 
+	       invent, prices);
+	 } 
+	 
+	   
+
+}

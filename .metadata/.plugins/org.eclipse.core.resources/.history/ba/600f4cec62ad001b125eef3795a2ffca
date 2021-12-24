@@ -1,0 +1,94 @@
+package program5;
+
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.List;
+
+public class Cash_Register {
+	
+	TestProgram5 prog;
+	List<Retail_Item> tested;
+	
+	List<Retail_Item> cashreg;
+	
+	
+	
+	
+	/*public static void main(String[] args) {
+		TestProgram5 tested = new TestProgram5();
+		Cash_Register test = new Cash_Register();
+		tested.openFile();
+		tested.readRecords();
+		test.display_menu();
+	}*/
+	
+	public void display_menu(List<Retail_Item> tested) {
+		
+		cashreg = new ArrayList<>(10);
+		
+		System.out.println("TestProgrm List:" + tested.size());
+		System.out.println("Cash Register List: " +cashreg.size());
+		
+		
+		Collections.copy(cashreg, tested);
+		
+		for (Retail_Item regist : cashreg) 
+	      {
+	         System.out.println(regist); // invokes toString
+	         
+	      }
+		
+		/*-for (Retail_Item listed : prog.list) 
+	      {
+	         System.out.println(listed); // invokes toString
+       
+	      }
+		
+		System.out.println(prog.list.size());
+		System.out.println("class cash reg");
+		
+		System.out.println(prog.list);
+		
+		System.out.println("Print 1");
+		
+		
+		
+		System.out.println("Print 2");
+		
+		System.out.println(cashreg);
+		
+		System.out.println("Print 3");
+		
+		for (Retail_Item regist : cashreg) 
+	      {
+	         System.out.println(regist); // invokes toString
+	         
+	      }*/
+		
+		/*for(int i = 0; i >= prog.list.size(); i++) {
+			prog.list.get(i);
+			cashreg.set(i, prog.list.get(i));
+		}*/
+		
+		
+		
+		
+		
+	}
+	
+	public void purchase_item(String item) {
+		
+	}
+
+	public void get_total() {
+		
+	}
+	
+	public void show_items() {
+		
+	}
+	
+	public void clear() {
+		
+	}
+}
